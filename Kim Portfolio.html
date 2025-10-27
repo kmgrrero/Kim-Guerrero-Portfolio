@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KIM GUERRERO | Portfolio</title>
   <style>
     /* ============================================
@@ -18,7 +18,7 @@
       --background-color: #f8f9fa;   /* Page background */
       --card-background: #f3f6fa;    /* Certification card background */
       --card-hover: #e8f0fa;          /* Card hover background */
-
+      
       /* FONT SIZES - Adjust these to make text larger or smaller */
       --font-size-body: 16px;         /* Main text size */
       --font-size-h1: 2.5rem;         /* Title size */
@@ -26,317 +26,270 @@
       --font-size-p: 1rem;            /* Paragraph text size */
       --font-size-small: 0.9rem;      /* Small text */
       --font-size-tiny: 0.85rem;      /* Tiny text for notes */
-
+      
       /* SPACING - Adjust padding and margins */
       --header-padding: 2rem 1rem;    /* Header padding */
       --container-padding: 2rem;      /* Main container padding */
       --section-margin: 2em;          /* Space between sections */
-
+      
       /* ALIGNMENT - Options: left, center, right, justify */
       --header-alignment: center;     /* Header text alignment */
       --text-alignment: left;         /* Body text alignment */
       --title-alignment: left;        /* Title alignment within sections */
     }
-
+    
     /* ============================================
        📝 BODY & GENERAL STYLING
-       (Main page background and text) */
-    /* ============================================ */
-    body {
-      font-family: 'Arial', sans-serif;
+       ============================================ */
+    * {
       margin: 0;
       padding: 0;
-      background: var(--background-color);
-      color: var(--text-dark);
-      font-size: var(--font-size-body);
-      text-align: var(--text-alignment);
+      box-sizing: border-box;
     }
-
+    
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background-color: var(--background-color);
+      font-size: var(--font-size-body);
+      padding: 0;
+    }
+    
     /* ============================================
-       🎯 HEADER STYLING
-       (Top section with your name)
-       Edit: Colors, alignment, padding */
-    /* ============================================ */
+       📋 HEADER STYLING
+       ============================================ */
     header {
-      background: var(--primary-color);
+      background-color: var(--primary-color);
       color: white;
       padding: var(--header-padding);
       text-align: var(--header-alignment);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-
+    
     header h1 {
-      margin: 0 0 0.2em 0;
       font-size: var(--font-size-h1);
+      margin-bottom: 0.5rem;
     }
-
+    
     header p {
-      margin: 0.5em 0 0 0;
       font-size: var(--font-size-p);
+      opacity: 0.95;
     }
-
+    
     /* ============================================
-       📦 CONTAINER STYLING
-       (Main white box holding all content)
-       Edit: Width, padding, border radius */
-    /* ============================================ */
+       📦 CONTAINER & SECTIONS
+       ============================================ */
     .container {
-      max-width: 800px;               /* Maximum width - increase for wider layout */
-      margin: 2rem auto;
+      max-width: 1000px;
+      margin: 0 auto;
       padding: var(--container-padding);
-      background: white;
-      border-radius: 12px;            /* Corner roundness - increase for more rounded */
-      box-shadow: 0 2px 8px rgba(30, 114, 198, 0.06);
     }
-
-    /* ============================================
-       🏷️ HEADING STYLING (h1, h2, h3)
-       Edit: Colors, sizes, alignment */
-    /* ============================================ */
-    h1 {
-      font-size: var(--font-size-h1);
-      text-align: var(--title-alignment);
-      margin: 0;
+    
+    section {
+      margin-bottom: var(--section-margin);
     }
-
+    
     h2 {
       color: var(--primary-color);
-      margin-top: var(--section-margin);
       font-size: var(--font-size-h2);
+      margin-bottom: 1rem;
+      border-bottom: 3px solid var(--primary-color);
+      padding-bottom: 0.5rem;
       text-align: var(--title-alignment);
-      border-bottom: 2px solid var(--primary-color);  /* Line under section titles */
-      padding-bottom: 0.5em;
     }
-
-    /* ============================================
-       📋 LIST STYLING
-       Edit: Bullet styles, indentation */
-    /* ============================================ */
-    ul {
-      padding-left: 1.6em;
+    
+    p {
       text-align: var(--text-alignment);
-    }
-
-    li {
-      margin-bottom: 0.5em;
+      margin-bottom: 1em;
       font-size: var(--font-size-p);
+      color: var(--text-dark);
     }
-
-    /* ============================================
-       🏆 CERTIFICATION CARDS SECTION
-       Edit: Card styling, colors, hover effects */
-    /* ============================================ */
-    .certs {
-      display: flex;
-      gap: 1.5em;
-      flex-wrap: wrap;
-      justify-content: var(--text-alignment);
-    }
-
-    .cert {
-      background: var(--card-background);
-      padding: 1em;
-      border-radius: 8px;
-      box-shadow: 0 1px 2px rgba(180, 200, 230, 0.08);
-      cursor: pointer;
-      transition: all 0.3s ease;
-      position: relative;
-      min-width: 200px;               /* Minimum card width - adjust for different sizes */
-      flex: 1;
-    }
-
-    .cert:hover {
-      background: var(--card-hover);
-      transform: translateY(-5px);    /* How far card moves up on hover */
-      box-shadow: 0 4px 12px rgba(30, 114, 198, 0.15);
-    }
-
-    .cert-title {
-      font-weight: bold;
-      color: var(--primary-color);
-      margin-bottom: 0.5em;
-      font-size: var(--font-size-p);
-    }
-
-    .cert-school {
-      font-size: var(--font-size-small);
-      color: #555;
-      margin-bottom: 0.3em;
-    }
-
-    .cert-date {
-      font-size: var(--font-size-small);
-      color: var(--text-light);
-      margin-top: 0.5em;
-    }
-
-    .cert-note {
-      font-size: var(--font-size-tiny);
-      color: #999;
-      margin-top: 0.5em;
-      font-style: italic;
-    }
-
-    /* ============================================
-       📞 CONTACT/SOCIAL SECTION
-       Edit: Link colors, spacing */
-    /* ============================================ */
-    .contact {
-      margin-top: var(--section-margin);
-    }
-
-    .contact a {
+    
+    a {
       color: var(--primary-color);
       text-decoration: none;
-      font-weight: bold;
       transition: color 0.3s ease;
     }
-
-    .contact a:hover {
+    
+    a:hover {
       color: var(--primary-hover);
       text-decoration: underline;
     }
-
+    
     /* ============================================
-       💡 UTILITY CLASSES
-       Use these for quick text adjustments */
-    /* ============================================ */
-    .text-center { text-align: center; }
-    .text-left { text-align: left; }
-    .text-right { text-align: right; }
-    .text-justify { text-align: justify; }
-
-    .small-text { font-size: var(--font-size-small); }
-    .tiny-text { font-size: var(--font-size-tiny); }
-
+       🏆 CERTIFICATION CARDS STYLING
+       ============================================ */
+    .certifications-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    
+    .cert {
+      background: var(--card-background);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    
+    .cert:hover {
+      background: var(--card-hover);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transform: translateY(-3px);
+    }
+    
+    .cert-title {
+      font-size: var(--font-size-p);
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+    
+    .cert-school {
+      font-size: var(--font-size-small);
+      color: var(--text-light);
+      margin-bottom: 0.3rem;
+    }
+    
+    .cert-date {
+      font-size: var(--font-size-tiny);
+      color: var(--text-light);
+      margin-bottom: 0.3rem;
+    }
+    
+    .cert-note {
+      font-size: var(--font-size-tiny);
+      color: var(--primary-color);
+      margin-top: 0.8rem;
+      font-style: italic;
+    }
+    
+    /* ============================================
+       🎓 EDUCATION SECTION
+       ============================================ */
+    .education-item {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--primary-color);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    
+    .education-item h3 {
+      color: var(--primary-color);
+      font-size: var(--font-size-p);
+      margin-bottom: 0.5rem;
+    }
+    
+    .education-item .school {
+      font-size: var(--font-size-small);
+      color: var(--text-light);
+      margin-bottom: 0.3rem;
+    }
+    
+    .education-item .year {
+      font-size: var(--font-size-tiny);
+      color: var(--text-light);
+    }
+    
+    /* ============================================
+       📱 RESPONSIVE DESIGN
+       ============================================ */
+    @media (max-width: 768px) {
+      header {
+        padding: 1.5rem 1rem;
+      }
+      
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      .container {
+        padding: 1rem;
+      }
+      
+      .certifications-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- ============================================
-       🎯 HEADER SECTION - Edit your name and title
-       ============================================ -->
   <header>
     <h1>KIM GUERRERO</h1>
-    <p>Account Manager | Designer | IT Enthusiast</p>
+    <p>Portfolio</p>
   </header>
-
+  
   <div class="container">
     <!-- ============================================
-         📖 PROFESSIONAL BIO SECTION
-         Edit: Your professional summary
+         📖 ABOUT ME SECTION
+         Edit your personal description here
          ============================================ -->
-    <section>
-      <h2>📋 ABOUT ME</h2>
-      <p>
-        A driven Account Manager at Secur Links Network and Technologies, Inc. with two years of experience bridging business and tech.
-        Kim combines a marketing background with hands-on design skills and a growing passion for IT.
-        Known for effective client management, clear communication, and creative problem-solving, Kim empowers teams and customers to reach success.
-      </p>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Hello! I'm a passionate individual focused on continuous learning and development. This portfolio showcases my certifications and educational background. Feel free to explore and download my certificates.</p>
     </section>
-
-    <!-- ============================================
-         💡 SKILLS SECTION
-         Edit: Add/remove skills as needed
-         ============================================ -->
-    <section>
-      <h2>💪 SKILLS</h2>
-      <ul>
-        <li>Canva Design &amp; Graphic Design</li>
-        <li>Microsoft Office: Excel, Word, PowerPoint, and more</li>
-        <li>Basic IT knowledge and technology solutions consulting</li>
-        <li>Project Coordination &amp; Account Management</li>
-        <li>Communication &amp; Relationship Building</li>
-      </ul>
-    </section>
-
-    <!-- ============================================
-         💼 WORK EXPERIENCE SECTION
-         Edit: Company name, position, dates, responsibilities
-         ============================================ -->
-    <section>
-      <h2>💼 WORK EXPERIENCE</h2>
-      <strong>Secur Links Network and Technologies, Inc.</strong><br/>
-      <i>Account Manager (Oct 2, 2023 — Present)</i>
-      <ul>
-        <li>Manage client relationships, ensuring their needs are met and exceeded</li>
-        <li>Oversee sales cycles, project delivery, and account growth</li>
-        <li>Coordinate with technical teams for customized IT solutions</li>
-        <li>Assist with marketing and communication initiatives</li>
-        <li>Negotiate contracts, handle account renewals, and problem resolution</li>
-      </ul>
-    </section>
-
-    <!-- ============================================
-         🎓 EDUCATION SECTION
-         Edit: School name, degree, major
-         ============================================ -->
-    <section>
-      <h2>🎓 EDUCATION</h2>
-      <p><strong>Cavite State University College</strong></p>
-      <p>Major in Marketing</p>
-    </section>
-
+    
     <!-- ============================================
          🏆 CERTIFICATIONS SECTION
-         Edit: Certificate names, dates, IDs
-         Click on cards to download (add PDF files later)
+         Edit certification details below
          ============================================ -->
-    <section>
-      <h2>🏆 CERTIFICATIONS</h2>
-      <p style="font-size: var(--font-size-small); color: var(--text-light); margin-bottom: 1em;">
-        Click on any certification to download the PDF
-      </p>
-      <div class="certs">
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <div class="certifications-grid">
+        
         <!-- CERTIFICATION 1 - Edit name, school, date, ID -->
-        <div class="cert" onclick="downloadCert('GDE.pdf', 'bf1877')" title="Click to download">
-          <div class="cert-title">📄 Graphic Design Essentials</div>
+        <div class="cert">
+          <div class="cert-title">📐 Graphic Design Essentials</div>
           <div class="cert-school">Canva Design School</div>
           <div class="cert-date">Issued Oct 24, 2025</div>
           <div class="cert-date"><strong>Credential ID:</strong> bf1877</div>
-          <div class="cert-note">Click to download PDF</div>
+          <div class="cert-note"><a href="GDE.pdf" download>Download GDE Certificate</a></div>
         </div>
-
+        
         <!-- CERTIFICATION 2 - Edit name, school, date, ID -->
-        <div class="cert" onclick="downloadCert('CE.pdf', '278256')" title="Click to download">
+        <div class="cert">
           <div class="cert-title">📄 Canva Essentials</div>
           <div class="cert-school">Canva Design School</div>
           <div class="cert-date">Issued Oct 24, 2025</div>
           <div class="cert-date"><strong>Credential ID:</strong> 278256</div>
-          <div class="cert-note">Click to download PDF</div>
+          <div class="cert-note"><a href="CE.pdf" download>Download CE Certificate</a></div>
         </div>
+        
       </div>
     </section>
-
+    
     <!-- ============================================
-         📞 CONTACT / SOCIAL SECTION
-         Edit: Add your social links and contact info
+         🎓 EDUCATION SECTION
+         Edit your education details here
          ============================================ -->
-    <section class="contact">
-      <h2>📞 CONTACT / SOCIAL MEDIA ACCOUNTS</h2>
-      <p>
-        LinkedIn: <a href="https://www.linkedin.com/in/kim-guerrero-5129b0292/" target="_blank">kim-guerrero</a>
-      </p>
-      <!-- ADD MORE LINKS HERE:
-        <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-        <p>GitHub: <a href="https://github.com/yourprofile" target="_blank">Your Profile</a></p>
-        <p>Portfolio: <a href="https://yourwebsite.com" target="_blank">yourwebsite.com</a></p>
-      -->
+    <section id="education">
+      <h2>Education</h2>
+      
+      <div class="education-item">
+        <h3>Bachelor of Secondary Education Major in English</h3>
+        <div class="school">Cebu Technological University - Main Campus</div>
+        <div class="year">2019 - 2024</div>
+      </div>
+      
+      <div class="education-item">
+        <h3>Academic Track, STEM Strand</h3>
+        <div class="school">City of Naga Science High School</div>
+        <div class="year">2017 - 2019</div>
+      </div>
     </section>
   </div>
-
-  <!-- ============================================
-       ⚙️ JAVASCRIPT - Download functionality
-       You can modify the alert message here
-       ============================================ -->
+  
   <script>
-    function downloadCert(filename, credentialId) {
-      alert(
-        `📥 Preparing to download: ${filename}\n` +
-        `ID: ${credentialId}\n\n` +
-        `📌 IMPORTANT: Make sure your PDF files are in the same folder as index.html with these exact names:\n` +
-        `- GDE.pdf\n` + /* Graphic Design Essentials */
-        `- CE.pdf` /* Canva Essentials */
-      );
-    }
+    // ============================================
+    // 🔧 JAVASCRIPT FOR INTERACTIVITY
+    // No longer needed as we use direct download links
+    // ============================================
   </script>
 </body>
 </html>
